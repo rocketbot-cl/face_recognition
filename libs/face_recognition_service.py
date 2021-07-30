@@ -27,7 +27,7 @@ class Face_recognition_service:
             result = list(distances <= 0.6)
         if result:
             return result[0]
-    
+
     def scalarDiference(self):
         known_image2 = face_recognition.load_image_file(self.known_image) # pic from DUT
         result = None
@@ -46,7 +46,8 @@ class Face_recognition_service:
             distances = face_recognition.face_distance(known_face_encodings, unknown_encoding)
             result = list(distances <= 0.6)
 
-        return "%.2f" % distances[0]
+        if result:
+            return "%.2f" % distances[0]
 
 if __name__ == "__main__":
 
@@ -54,7 +55,7 @@ if __name__ == "__main__":
         recognition_service = Face_recognition_service(sys.argv[2], sys.argv[3])
         result3 = recognition_service.booleanComparation()
         print(result3)
-
+        
     if sys.argv[1] == "scalarDiference":
         recognition_service = Face_recognition_service(sys.argv[2], sys.argv[3])
         result3 = recognition_service.scalarDiference()
