@@ -60,8 +60,9 @@ try:
 
             newFace_recognition_service = Face_recognition_service(known_image, image_to_check)
             result = newFace_recognition_service.scalarDiference()
-
-        SetVar(result2, 1 - float(result))
+            
+        result = 1 - float(result)
+        SetVar(result2, "%.2f" % result)
 
 except Exception as e:
     print("\x1B[" + "31;40mAn error occurred\u2193\x1B[" + "0m")
