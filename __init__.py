@@ -65,6 +65,6 @@ try:
         SetVar(result2, "%.2f" % result)
 
 except Exception as e:
-    print("\x1B[" + "31;40mAn error occurred\u2193\x1B[" + "0m")
+    print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
     PrintException()
     raise e
