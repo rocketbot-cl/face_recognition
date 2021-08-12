@@ -2,13 +2,7 @@
 
 Module to recognize faces.
 
-```
-  <books>
-    <book>
-      <author>Caleb Cipra</author>
-    </book>
-  </books>
-```
+----
 
 ## Overview
 
