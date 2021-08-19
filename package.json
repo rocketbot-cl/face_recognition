@@ -81,6 +81,7 @@
                   "en": "Variable where to save:",
                   "es": "Variable donde guardar:"
               },
+              "remove_vars": true,
               "id": "result",
               "css": "col-md-6"
           }
@@ -159,6 +160,7 @@
                     "en": "Variable where to save:",
                     "es": "Variable donde guardar:"
                 },
+                "remove_vars": true,
                 "id": "result",
                 "css": "col-md-6"
             }
