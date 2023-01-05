@@ -1,23 +1,23 @@
-# Face recognition
+# Reconocedor facial
   
-Module to recognize faces. You can get boolean or percentage result.  
+Module para reconocer caras. Puede obtener resultados booleanos o porcentuales.  
 
 *Read this in other languages: [English](README.md), [Español](README.es.md).*
 
-## How to install this module
+## Como instalar este módulo
   
-__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
+__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  
 
 
 
 ## Overview
 
 
-1. Face recognition  
-Face recognition
+1. Reconocedor de persona  
+Reconocedor de persona
 
-2. Percentage face recognition  
-Percentage face recognition  
+2. Reconocedor facial en porcentaje  
+Reconocedor facial en porcentaje  
 
 
 
