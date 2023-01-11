@@ -3,9 +3,9 @@
   "author": "Caleb Cipra",
   "description": "Module to recognize faces. You can get boolean or percentage result.",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "1.0",
+  "version": "1.0.1",
   "license": "MIT",
-  "homepage": "http://rocketbot.co",
+  "homepage": "http://rocketbot.com",
   "linux": true,
   "windows": true,
   "mac": true,
@@ -47,6 +47,10 @@
                     "es": "Ruta de la imagen de referencia:",
                     "en": "Path to reference image:"
                 },
+                "description": {
+                    "es": "Archivo que servirá de referencia para reconocer a la persona",
+                    "en": "File that will be used as reference to recognize the person"
+                },
                 "help": {
                     "es": "Ruta donde está el archivo",
                     "en": "Path to file"
@@ -55,35 +59,43 @@
                 "css": "col-md-12"
             },
             {
-              "type": "file_select",
-              "placeholder": {
-                  "es": "C:\\Users\\Robot\\Desktop\\img.png",
-                  "en": "C:\\Users\\Robot\\Desktop\\img.png"
-              },
-              "title": {
-                  "es": "Ruta de la imagen a reconocer:",
-                  "en": "Path to image to recognize:"
-              },
-              "help": {
-                  "es": "Ruta donde está el archivo",
-                  "en": "Path to file"
-              },
-              "id": "unknown_image",
-              "css": "col-md-12"
+                "type": "file_select",
+                "placeholder": {
+                    "es": "C:\\Users\\Robot\\Desktop\\img.png",
+                    "en": "C:\\Users\\Robot\\Desktop\\img.png"
+                },
+                "title": {
+                    "es": "Ruta de la imagen a reconocer:",
+                    "en": "Path to image to recognize:"
+                },
+                "description": {
+                    "es": "Archivo que se desea reconocer",
+                    "en": "File that will be recognized"
+                },
+                "help": {
+                    "es": "Ruta donde está el archivo",
+                    "en": "Path to file"
+                },
+                "id": "unknown_image",
+                "css": "col-md-12"
           },
           {
-              "type": "input",
-              "placeholder": {
-                  "en" : "result",
-                  "es" : "resultado"
-              },
-              "title": {
-                  "en": "Variable where to save:",
-                  "es": "Variable donde guardar:"
-              },
-              "remove_vars": true,
-              "id": "result",
-              "css": "col-md-6"
+                "type": "input",
+                "placeholder": {
+                    "en" : "result",
+                    "es" : "resultado"
+                },
+                "title": {
+                    "en": "Variable where to save:",
+                    "es": "Variable donde guardar:"
+                },
+                "description": {
+                    "en": "Variable where to save the result",
+                    "es": "Variable donde guardar el resultado"
+                },
+                "remove_vars": true,
+                "id": "result",
+                "css": "col-md-6"
           }
         ]
       },
@@ -126,6 +138,10 @@
                       "es": "Ruta del archivo a clasificar:",
                       "en": "Path to file to recognize:"
                   },
+                  "description": {
+                      "es": "Archivo que servirá de referencia para reconocer a la persona",
+                      "en": "File that will be used as reference to recognize the person"
+                  },
                   "help": {
                       "es": "Ruta donde está el archivo",
                       "en": "Path to file"
@@ -143,6 +159,10 @@
                     "es": "Ruta del archivo a clasificar:",
                     "en": "Path to file to recognize:"
                 },
+                "description": {
+                    "es": "Archivo que se desea reconocer.",
+                    "en": "File that will be recognized."
+                },
                 "help": {
                     "es": "Ruta donde está el archivo",
                     "en": "Path to file"
@@ -159,6 +179,10 @@
                 "title": {
                     "en": "Variable where to save:",
                     "es": "Variable donde guardar:"
+                },
+                "description": {
+                    "en": "Variable where to save the result",
+                    "es": "Variable donde guardar el resultado"
                 },
                 "remove_vars": true,
                 "id": "result",
