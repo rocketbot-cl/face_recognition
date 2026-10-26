@@ -14,6 +14,27 @@ import numpy as np
 from convertPdfToPng import convertPdfToPng
 from  imageExtensionChecker import imageExtensionChecker
 
+def validar_imagen_para_servicio(ruta):
+    """Valida JPEG/PNG con Pillow de Rocketbot y devuelve una ruta absoluta."""
+    import PIL.Image
+    if not isinstance(ruta, str) or not ruta:
+        raise ValueError("Debe indicar la ruta de ambas imagenes.")
+
+    ruta_absoluta = os.path.abspath(ruta)
+    if not os.path.isfile(ruta_absoluta):
+        raise ValueError("No existe el archivo de imagen: " + ruta_absoluta)
+
+    try:
+        with PIL.Image.open(ruta_absoluta, formats=["JPEG", "PNG"]) as imagen:
+            imagen.load()
+    except (OSError, ValueError, PIL.Image.DecompressionBombError) as error:
+        raise ValueError(
+            "Solo se permiten imagenes JPEG o PNG validas: " + ruta_absoluta
+        ) from error
+
+    return ruta_absoluta
+
+
 platform_name = platform.system()
 path_to_poppler = None
 
@@ -36,7 +57,7 @@ def import_lib(relative_path, name, class_name=None):
     return foo
 
 if (platform_name == "Windows"):
-    cv2 = import_lib('cv2/cv2.cp36-win32.pyd', 'cv2')
+    #cv2 = import_lib('cv2/cv2.cp36-win32.pyd', 'cv2')
     path_to_poppler = base_path + 'modules' + os.sep + 'face_recognition' + os.sep + 'bin' + os.sep + 'bin' + os.sep
 
 
@@ -78,8 +99,10 @@ try:
             else:
                 # imageToSearchIn = cv2.imread(imageName)
                 newPathImage = imageName
-            
+        
             # print(newPathImage)
+            newPathImage = validar_imagen_para_servicio(newPathImage)
+            image_to_check = validar_imagen_para_servicio(image_to_check)
 
             if (current_platform != "Linux"):
 
@@ -120,13 +143,15 @@ try:
                 # imageToSearchIn = cv2.imread(imageName)
                 newPathImage = imageName
 
+        newPathImage = validar_imagen_para_servicio(newPathImage)
+        image_to_check = validar_imagen_para_servicio(image_to_check)
+
         if (current_platform != "Linux"):
 
             a = Popen([base_path + 'modules' + os.sep + 'face_recognition' + os.sep + 'bin' + os.sep + executables[current_platform], 'scalarDiference', newPathImage, image_to_check], stdout=PIPE)
             result = a.communicate()[0].decode()
 
         else:
-
             newFace_recognition_service = Face_recognition_service(newPathImage, image_to_check)
             result = newFace_recognition_service.scalarDiference()
         
